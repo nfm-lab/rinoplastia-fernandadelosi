@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"E:\\\\User Natfi HD\\\\DRA-FE\\\\.claude\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(start \"\" \"file:///E:/User%20Natfi%20HD/DRA-FE/index.html\")",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\" -Directory | Select-Object Name | Format-Table -AutoSize)",
+      "Bash(command -v magick)",
+      "Bash(command -v convert)",
+      "Bash(command -v ffmpeg)",
+      "Bash(command -v cwebp)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"E:\\\\User Natfi HD\\\\DRA-FE\\\\assets\\\\images\\\\gallery\\\\hero-nova.JPEG\"\\); \"$\\($img.Width\\) x $\\($img.Height\\)\"; $img.Dispose\\(\\))",
+      "Bash(git init *)"
+    ]
+  }
+}

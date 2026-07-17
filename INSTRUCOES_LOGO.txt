@@ -1,0 +1,35 @@
+📋 INSTRUÇÕES PARA ENVIAR O LOGO
+
+O logo atual está distorcido porque está em baixa resolução.
+
+✅ MELHOR FORMATO:
+1. SVG (Scalable Vector Graphics) - IDEAL
+   - Nunca fica distorcido
+   - Funciona em qualquer tamanho
+   - Arquivo leve
+
+2. PNG de alta resolução - BOM
+   - Mínimo 2000x500 pixels
+   - Fundo transparente (PNG-24)
+   - Sem compressão pesada
+
+❌ EVITAR:
+- JPG (não suporta transparência)
+- Imagens pequenas (< 800px)
+- Arquivos muito comprimidos
+
+📁 ONDE SALVAR:
+E:\User Natfi HD\DRA-FE\assets\images\logo\
+
+NOMES DOS ARQUIVOS:
+- logo-dark.svg (ou .png) - versão escura para header
+- logo-light.svg (ou .png) - versão clara para footer
+- logo-icon.svg (ou .png) - ícone pequeno
+
+---
+
+RESUMO DAS CORREÇÕES FEITAS:
+✅ Favicon adicionado
+✅ Seção "Depoimentos dos Pacientes" (screenshots) removida
+✅ Ícone Instagram corrigido
+✅ Pronto para novo logo
