@@ -184,21 +184,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
 .location-phone svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5}
 
 /* CONTACT CTA */
-.contact-cta{padding:120px 0;background:var(--cream)}
-.contact-card{display:grid;grid-template-columns:1.1fr 1fr;align-items:stretch;background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(48,24,14,.1)}
-.contact-card-content{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;color:var(--dark)}
-.contact-card h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.6rem);margin-bottom:18px;font-weight:400;letter-spacing:.02em}
+.contact-cta{padding:64px 0;background:var(--cream)}
+.contact-card{display:grid;grid-template-columns:1.1fr 1fr;align-items:stretch;background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(48,24,14,.1);height:460px}
+.contact-card-content{padding:48px 56px;display:flex;flex-direction:column;justify-content:center;color:var(--dark)}
+.contact-card h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,2.8vw,2.6rem);margin-bottom:18px;font-weight:400;letter-spacing:.02em}
 .contact-card h2 em{font-style:italic;color:var(--copper);font-weight:400}
-.contact-card-content > p{font-size:.95rem;line-height:1.8;margin-bottom:28px;color:var(--brown)}
-.contact-links{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.contact-card-content > p{font-size:1rem;line-height:1.75;margin-bottom:26px;color:var(--brown)}
+.contact-links{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
 .contact-link{display:flex;align-items:center;gap:12px;color:var(--dark);font-size:.95rem;font-weight:600;transition:color .3s;width:fit-content}
 .contact-link:hover{color:var(--copper)}
 .contact-link svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;flex-shrink:0;color:var(--copper)}
 .btn-cta-card{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--copper);color:var(--white);font-family:'Questrial',sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;font-weight:600;border-radius:4px;width:fit-content}
 .btn-cta-card:hover{background:var(--brown);transform:translateY(-2px);box-shadow:0 8px 24px rgba(82,58,47,.3)}
 .btn-cta-card svg{width:18px;height:18px;fill:currentColor}
-.contact-card-photo{position:relative;min-height:420px;overflow:hidden}
-.contact-card-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.contact-card-photo{position:relative;overflow:hidden}
+.contact-card-photo img{width:100%;height:100%;object-fit:cover;object-position:center center}
 
 /* FOOTER */
 .footer{padding:36px 0 20px;background:var(--dark);text-align:center}
@@ -235,9 +235,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
   .reviews-layout{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
   .location-grid{grid-template-columns:1fr}
-  .contact-card{grid-template-columns:1fr}
-  .contact-card-photo{min-height:320px;order:-1}
-  .contact-card-content{padding:48px 32px;text-align:center}
+  .contact-card{grid-template-columns:1fr;max-height:none}
+  .contact-card-photo{height:260px;order:-1}
+  .contact-card-content{padding:40px 32px;text-align:center}
   .contact-links{align-items:center}
   .contact-link{margin:0 auto}
   .btn-cta-card{margin:0 auto}
