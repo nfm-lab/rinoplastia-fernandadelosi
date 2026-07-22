@@ -219,6 +219,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
   .hero{min-height:auto}
   .hero-content{grid-template-columns:1fr;gap:0;padding-top:60px;padding-bottom:56px}
   .hero-text{padding:40px 0 0;text-align:center;order:2}
+  .hero-buttons{justify-content:center}
   .hero-subtitle{margin:0 auto 40px}
   .hero-img-wrap{height:60vh;min-height:400px;order:1}
   .hero-img-overlay{background:linear-gradient(to top,var(--light) 0%,transparent 30%)}
@@ -673,10 +674,9 @@ const navLinks=[...nav.querySelectorAll('a[href^="#"]')];
 const navSections=navLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
 const navObserver=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      const id='#'+entry.target.id;
-      navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));
-    }
+    const id='#'+entry.target.id;
+    const link=navLinks.find(a=>a.getAttribute('href')===id);
+    if(link) link.classList.toggle('active',entry.isIntersecting);
   });
 },{rootMargin:'-45% 0px -50% 0px'});
 navSections.forEach(s=>navObserver.observe(s));
