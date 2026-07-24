@@ -79,6 +79,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
 .about-img{position:relative;overflow:hidden}
 .about-img img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
 .about-img::after{content:'';position:absolute;bottom:0;right:0;width:40%;height:40%;border:1px solid var(--copper);transform:translate(20px,20px);pointer-events:none}
+.credential-badge{position:absolute;left:20px;bottom:20px;z-index:2;background:var(--dark);padding:14px 22px;border-radius:4px;width:fit-content;max-width:calc(100% - 40px)}
+.credential-badge-label{display:block;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);font-weight:600;margin-bottom:5px}
+.credential-badge-value{font-size:.85rem;letter-spacing:.03em;color:var(--cream);font-weight:600;white-space:nowrap}
 .about-title{font-size:clamp(2rem,3.5vw,3rem);color:var(--dark);margin-bottom:24px}
 .about-text{font-size:.95rem;line-height:1.9;color:var(--brown);margin-bottom:24px}
 .about-credentials{display:flex;flex-wrap:wrap;gap:20px;margin-top:32px}
@@ -200,6 +203,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
 .footer-links a{font-size:.75rem;color:var(--cream);letter-spacing:.05em;border-bottom:1px solid rgba(232,229,220,.3);transition:opacity .3s}
 .footer-links a:hover{opacity:.7}
 .footer-links span{color:var(--copper);font-size:.7rem}
+.footer-crm{font-size:.7rem;color:var(--copper);letter-spacing:.1em;text-transform:uppercase;margin-top:8px}
 .footer-divider{width:60px;height:1px;background:var(--copper);margin:14px auto;opacity:.5}
 .footer-credit{font-size:.7rem!important;color:var(--copper)!important;letter-spacing:.05em!important}
 .footer-credit a{color:var(--copper);font-weight:600;border-bottom:1px solid rgba(175,123,99,.4);transition:opacity .3s}
@@ -242,6 +246,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
   .hero-title{font-size:2.2rem}
   .comparison-item{flex:0 0 85vw}
   .screenshots-scroll img{flex:0 0 260px;height:340px}
+  .credential-badge{left:14px;bottom:14px;padding:10px 16px}
+  .credential-badge-label{font-size:.56rem;letter-spacing:.14em}
+  .credential-badge-value{font-size:.72rem}
 }
 
 /* ANIMATIONS */
@@ -351,6 +358,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
   <div class="container about-grid">
     <div class="about-img fade-up">
       <img src="assets/images/gallery/about.jpg" alt="Dra. Fernanda Delosi - Perfil" width="600" height="800" loading="lazy">
+      <div class="credential-badge">
+        <span class="credential-badge-label">Registro Profissional</span>
+        <span class="credential-badge-value">CRM SP 206072 &middot; RQE 141716</span>
+      </div>
     </div>
     <div class="fade-up">
       <h2 class="about-title">Sobre a Dra. Fernanda</h2>
@@ -596,6 +607,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
       </div>
       <div class="contact-card-photo">
         <img src="assets/images/gallery/personal.jpg" alt="Dra. Fernanda Delosi" loading="lazy">
+        <div class="credential-badge">
+          <span class="credential-badge-label">Registro Profissional</span>
+          <span class="credential-badge-value">CRM SP 206072 &middot; RQE 141716</span>
+        </div>
       </div>
     </div>
   </div>
@@ -641,6 +656,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
       <img src="assets/images/logo/logo-light.png" alt="Dra. Fernanda Delosi" width="170" height="39">
     </div>
     <p>Dra. Fernanda Delosi &mdash; Otorrinolaringologista | Todos os direitos reservados</p>
+    <p class="footer-crm">CRM SP 206072 &middot; RQE 141716</p>
     <div class="footer-links">
       <a href="privacidade.html">Política de Privacidade</a>
     </div>
