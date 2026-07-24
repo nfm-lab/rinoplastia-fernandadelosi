@@ -115,7 +115,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
 .slider-carousel{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 24px 20px;scrollbar-width:none}
 .slider-carousel::-webkit-scrollbar{display:none}
 .comparison-item{flex:0 0 380px;scroll-snap-align:center}
-.comparison-slider{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;cursor:ew-resize;border-radius:4px;background:#000;touch-action:none}
+.comparison-slider{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;cursor:ew-resize;border-radius:4px;background:#000}
 .comparison-slider img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .comparison-slider .img-after{clip-path:inset(0 0 0 50%)}
 .comparison-slider .slider-handle{position:absolute;top:0;left:50%;width:3px;height:100%;background:var(--white);transform:translateX(-50%);z-index:10;pointer-events:none}
@@ -138,8 +138,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
 .reviews-summary .excellent{font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dark);margin-bottom:12px;font-weight:700;display:block}
 .reviews-summary .stars{display:flex;justify-content:center;gap:6px;margin-bottom:12px}
 .reviews-summary .stars svg{width:32px;height:32px;fill:#F4B400}
-.reviews-summary .based-on{font-size:.85rem;color:var(--brown);margin-bottom:16px;line-height:1.4}
-.reviews-summary .google-logo{width:110px;margin:0 auto}
+.reviews-summary .google-logo{display:block;width:110px;margin:0 auto}
 .reviews-grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 4px 16px;scrollbar-width:none;align-items:stretch}
 .reviews-grid::-webkit-scrollbar{display:none}
 .review-card{padding:24px;background:var(--white);border:1px solid rgba(82,58,47,.08);position:relative;flex:0 0 280px;height:230px;border-radius:12px;scroll-snap-align:start;box-shadow:0 12px 32px rgba(48,24,14,.06);display:flex;flex-direction:column}
@@ -441,7 +440,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="based-on">Com base em 13 avaliações</p>
         <svg class="google-logo" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
         <span class="reviews-summary-cta">Ver todas as avaliações</span>
       </a>
@@ -691,9 +689,7 @@ document.querySelectorAll('[data-slider]').forEach(slider=>{
   slider.addEventListener('mousedown',e=>{active=true;move(e.clientX)});
   slider.addEventListener('mousemove',e=>{if(active)move(e.clientX)});
   document.addEventListener('mouseup',()=>active=false);
-  slider.addEventListener('touchstart',e=>{active=true;move(e.touches[0].clientX)},{passive:true});
-  slider.addEventListener('touchmove',e=>{if(active){e.preventDefault();move(e.touches[0].clientX)}},{passive:false});
-  slider.addEventListener('touchend',()=>active=false);
+  slider.addEventListener('touchstart',e=>{move(e.touches[0].clientX)},{passive:true});
 });
 const carousel=document.getElementById('sliderCarousel');
 document.getElementById('scrollLeft').addEventListener('click',()=>carousel.scrollBy({left:-400,behavior:'smooth'}));
