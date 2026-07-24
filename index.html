@@ -677,19 +677,33 @@ const navObserver=new IntersectionObserver(entries=>{
 navSections.forEach(s=>navObserver.observe(s));
 document.querySelectorAll('[data-slider]').forEach(slider=>{
   let active=false;
+  let pct=50;
   const handle=slider.querySelector('.slider-handle');
   const after=slider.querySelector('.img-after');
   function move(x){
     const rect=slider.getBoundingClientRect();
-    let pct=((x-rect.left)/rect.width)*100;
+    pct=((x-rect.left)/rect.width)*100;
     pct=Math.max(0,Math.min(100,pct));
     after.style.clipPath=`inset(0 0 0 ${pct}%)`;
     handle.style.left=pct+'%';
   }
+  function nearHandle(x){
+    const rect=slider.getBoundingClientRect();
+    return Math.abs(x-(rect.left+rect.width*pct/100))<36;
+  }
   slider.addEventListener('mousedown',e=>{active=true;move(e.clientX)});
   slider.addEventListener('mousemove',e=>{if(active)move(e.clientX)});
   document.addEventListener('mouseup',()=>active=false);
-  slider.addEventListener('touchstart',e=>{move(e.touches[0].clientX)},{passive:true});
+  slider.addEventListener('touchstart',e=>{
+    const x=e.touches[0].clientX;
+    if(nearHandle(x)){active=true;slider.style.touchAction='none';move(x)}
+  },{passive:true});
+  slider.addEventListener('touchmove',e=>{
+    if(active){e.preventDefault();move(e.touches[0].clientX)}
+  },{passive:false});
+  function endTouch(){active=false;slider.style.touchAction=''}
+  slider.addEventListener('touchend',endTouch);
+  slider.addEventListener('touchcancel',endTouch);
 });
 const carousel=document.getElementById('sliderCarousel');
 document.getElementById('scrollLeft').addEventListener('click',()=>carousel.scrollBy({left:-400,behavior:'smooth'}));
