@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual'}
+window.addEventListener('load',function(){window.scrollTo(0,0)});</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="assets/images/logo/logo-icon.png">
@@ -89,7 +91,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
 .metric-item:last-child{border-right:none}
 .metric-number{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--copper);margin-bottom:4px;line-height:1}
 .metric-label{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);font-weight:600}
-@media(max-width:600px){.metrics-grid{grid-template-columns:1fr;gap:12px}.metric-item{padding:6px 0;border-right:none;border-bottom:1px solid rgba(175,123,99,.2)}.metric-item:last-child{border-bottom:none}}
+@media(max-width:600px){.metrics-grid{gap:12px}.metric-item{padding:6px 0}.metric-number{font-size:1.5rem}.metric-label{font-size:.65rem;letter-spacing:.08em}}
 
 /* SERVICES */
 .services{padding:90px 0;background:var(--dark)}
